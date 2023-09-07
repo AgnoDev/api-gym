@@ -44,7 +44,6 @@ public class Aluno {
                  String celular, String telefone, Sexo sexo,
                  @NotNull LocalDate dataNascimento, String cpf,
                  @NotNull Boolean aceitaTermos) {
-        this.idAluno = idAluno;
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.celular = celular;
