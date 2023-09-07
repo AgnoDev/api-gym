@@ -34,7 +34,6 @@ public class Aluno {
     private LocalDate dataNascimento;
     @CPF
     private String cpf;
-
     @NotNull
     private Boolean aceitaTermos;
     private LocalDateTime dataHoraDoCadastro;
