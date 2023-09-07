@@ -1,5 +1,6 @@
 package br.com.arenagym.alunotreino.aluno.domain;
 
+import br.com.arenagym.alunotreino.aluno.application.api.AlunoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -39,18 +40,16 @@ public class Aluno {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaAtualizacao;
 
-    public Aluno(UUID idAluno, String nomeCompleto, String email,
-                 String celular, String telefone, Sexo sexo,
-                 @NotNull LocalDate dataNascimento, String cpf,
-                 @NotNull Boolean aceitaTermos) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.aceitaTermos = aceitaTermos;
+    public Aluno(AlunoRequest alunoRequest) {
+
+        this.nomeCompleto = alunoRequest.getNomeCompleto();
+        this.email = alunoRequest.getEmail();
+        this.celular = alunoRequest.getCelular();
+        this.telefone = alunoRequest.getTelefone();
+        this.sexo = alunoRequest.getSexo();
+        this.dataNascimento = alunoRequest.getDataNascimento();
+        this.cpf = alunoRequest.getCpf();
+        this.aceitaTermos = alunoRequest.getAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }

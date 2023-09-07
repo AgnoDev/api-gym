@@ -1,5 +1,6 @@
 package br.com.arenagym.alunotreino.aluno.application.api;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,6 @@ import org.springframework.web.bind.annotation.*;
 public interface AlunoAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    AlunoResponse postAluno(@RequestBody AlunoRequest alunoRequest);
+    AlunoResponse postAluno(@Valid @RequestBody AlunoRequest alunoRequest);
 
 }
