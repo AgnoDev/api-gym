@@ -28,7 +28,8 @@ public class AlunoApplicationService implements AlunoService {
     @Override
     public List<AlunoListResponse> getAllAluno() {
         log.info("[start] AlunoApplicationService - getAllAluno");
+        List<Aluno> alunos = alunoRepository.getAllAluno();
         log.info("[finish] AlunoApplicationService - getAllAluno");
-        return null;
+        return AlunoListResponse.converte(alunos);
     }
 }
