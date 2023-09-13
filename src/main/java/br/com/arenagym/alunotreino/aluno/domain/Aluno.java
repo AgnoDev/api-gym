@@ -8,15 +8,16 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.UUID;
 import org.hibernate.validator.constraints.br.CPF;
+
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-//@Entity
+@Entity
 public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
