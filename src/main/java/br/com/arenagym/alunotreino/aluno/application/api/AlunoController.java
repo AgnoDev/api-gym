@@ -25,9 +25,8 @@ public class AlunoController implements AlunoAPI {
     @Override
     public List<AlunoListResponse> getAllAluno() {
         log.info("[start] AlunoController - getAllAluno");
-
+        List<AlunoListResponse> alunoListResponse = alunoService.getAllAluno();
         log.info("[finish] AlunoController - getAllAluno");
-
-        return null;
+        return alunoListResponse;
     }
 }
