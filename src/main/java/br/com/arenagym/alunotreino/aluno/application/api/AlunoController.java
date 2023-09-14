@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -28,5 +29,13 @@ public class AlunoController implements AlunoAPI {
         List<AlunoListResponse> alunoListResponse = alunoService.getAllAluno();
         log.info("[finish] AlunoController - getAllAluno");
         return alunoListResponse;
+    }
+
+    @Override
+    public AlunoResponseId getAlunoById(UUID idAluno) {
+        log.info("[start] AlunoController - getAlunoById");
+        log.info("[idAluno] {}", idAluno);
+        log.info("[finish] AlunoController - getAlunoById");
+        return null;
     }
 }
