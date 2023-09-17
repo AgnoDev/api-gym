@@ -35,7 +35,8 @@ public class AlunoController implements AlunoAPI {
     public AlunoResponseId getAlunoById(UUID idAluno) {
         log.info("[start] AlunoController - getAlunoById");
         log.info("[idAluno] {}", idAluno);
+        AlunoResponseId alunoResponseId = alunoService.getAlunoById(idAluno);
         log.info("[finish] AlunoController - getAlunoById");
-        return null;
+        return alunoResponseId;
     }
 }

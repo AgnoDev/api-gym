@@ -3,6 +3,7 @@ package br.com.arenagym.alunotreino.aluno.application.service;
 import br.com.arenagym.alunotreino.aluno.application.api.AlunoListResponse;
 import br.com.arenagym.alunotreino.aluno.application.api.AlunoRequest;
 import br.com.arenagym.alunotreino.aluno.application.api.AlunoResponse;
+import br.com.arenagym.alunotreino.aluno.application.api.AlunoResponseId;
 import br.com.arenagym.alunotreino.aluno.application.repository.AlunoRepository;
 import br.com.arenagym.alunotreino.aluno.domain.Aluno;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -31,5 +33,13 @@ public class AlunoApplicationService implements AlunoService {
         List<Aluno> alunos = alunoRepository.getAllAluno();
         log.info("[finish] AlunoApplicationService - getAllAluno");
         return AlunoListResponse.converte(alunos);
+    }
+
+    @Override
+    public AlunoResponseId getAlunoById(UUID idAluno) {
+        log.info("[start] AlunoApplicationService - getAlunoById");
+        Aluno aluno = alunoRepository.getAlunoById(idAluno);
+        log.info("[finish] AlunoApplicationService - getAlunoById");
+        return new AlunoResponseId(aluno);
     }
 }

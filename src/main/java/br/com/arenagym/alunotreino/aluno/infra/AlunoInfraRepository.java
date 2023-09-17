@@ -7,6 +7,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -27,5 +29,14 @@ public class AlunoInfraRepository implements AlunoRepository {
         List<Aluno> getAllAluno = alunoJPARepository.findAll();
         log.info("[finish] - AlunoInfraRepository - getAllAluno");
         return getAllAluno;
+    }
+
+    @Override
+    public Aluno getAlunoById(UUID idAluno) {
+        log.info("[start] - AlunoInfraRepository - getAlunoById");
+        log.info("[finish] - AlunoInfraRepository - getAlunoById");
+        Aluno aluno = alunoJPARepository.findById(idAluno)
+                .orElseThrow(()-> new RuntimeException("Cliente Não Encontrado"));
+        return aluno;
     }
 }
