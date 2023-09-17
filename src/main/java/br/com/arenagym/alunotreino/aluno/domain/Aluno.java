@@ -27,6 +27,7 @@ public class Aluno {
     private String nomeCompleto;
     @NotBlank
     @Email
+    @Column(unique = true)
     private String email;
     @NotBlank
     private String celular;
@@ -35,6 +36,7 @@ public class Aluno {
     @NotNull
     private LocalDate dataNascimento;
     @CPF
+    @Column(unique = true)
     private String cpf;
     @NotNull
     private Boolean aceitaTermos;
