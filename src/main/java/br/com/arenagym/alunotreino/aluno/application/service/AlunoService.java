@@ -12,4 +12,5 @@ public interface AlunoService {
     AlunoResponse postAluno(AlunoRequest alunoRequest);
     List<AlunoListResponse> getAllAluno();
     AlunoResponseId getAlunoById(UUID idAluno);
+    void deleteAlunoById(UUID idAluno);
 }

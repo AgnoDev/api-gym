@@ -39,4 +39,13 @@ public class AlunoInfraRepository implements AlunoRepository {
                 .orElseThrow(()-> new RuntimeException("Cliente Não Encontrado"));
         return aluno;
     }
+
+    @Override
+    public void deleteAlunoById(Aluno aluno) {
+        log.info("[start] - AlunoInfraRepository - deleteAlunoById");
+        alunoJPARepository.delete(aluno);
+        log.info("[finish] - AlunoInfraRepository - deleteAlunoById");
+
+
+    }
 }

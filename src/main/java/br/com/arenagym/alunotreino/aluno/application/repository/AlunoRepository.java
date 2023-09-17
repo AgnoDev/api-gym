@@ -11,4 +11,5 @@ public interface AlunoRepository {
     Aluno postAluno(Aluno aluno);
     List<Aluno> getAllAluno();
     Aluno getAlunoById(UUID idAluno);
+    void deleteAlunoById(Aluno aluno);
 }

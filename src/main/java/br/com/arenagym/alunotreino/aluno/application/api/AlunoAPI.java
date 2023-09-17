@@ -21,4 +21,10 @@ public interface AlunoAPI {
     @GetMapping(value = "/{idAluno}")
     @ResponseStatus(code = HttpStatus.OK)
     AlunoResponseId getAlunoById(@PathVariable UUID idAluno);
+
+    @DeleteMapping(value = "/{idAluno}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteAlunoById(@PathVariable UUID idAluno);
+
+
 }

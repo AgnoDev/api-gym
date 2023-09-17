@@ -42,4 +42,12 @@ public class AlunoApplicationService implements AlunoService {
         log.info("[finish] AlunoApplicationService - getAlunoById");
         return new AlunoResponseId(aluno);
     }
+
+    @Override
+    public void deleteAlunoById(UUID idAluno) {
+        log.info("[start] AlunoApplicationService - deleteAlunoById");
+        Aluno aluno = alunoRepository.getAlunoById(idAluno);
+        alunoRepository.deleteAlunoById(aluno);
+        log.info("[finish] AlunoApplicationService - deleteAlunoById");
+    }
 }
