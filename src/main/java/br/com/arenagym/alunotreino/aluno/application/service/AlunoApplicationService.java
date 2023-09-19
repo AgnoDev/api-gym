@@ -1,9 +1,6 @@
 package br.com.arenagym.alunotreino.aluno.application.service;
 
-import br.com.arenagym.alunotreino.aluno.application.api.AlunoListResponse;
-import br.com.arenagym.alunotreino.aluno.application.api.AlunoRequest;
-import br.com.arenagym.alunotreino.aluno.application.api.AlunoResponse;
-import br.com.arenagym.alunotreino.aluno.application.api.AlunoResponseId;
+import br.com.arenagym.alunotreino.aluno.application.api.*;
 import br.com.arenagym.alunotreino.aluno.application.repository.AlunoRepository;
 import br.com.arenagym.alunotreino.aluno.domain.Aluno;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +46,14 @@ public class AlunoApplicationService implements AlunoService {
         Aluno aluno = alunoRepository.getAlunoById(idAluno);
         alunoRepository.deleteAlunoById(aluno);
         log.info("[finish] AlunoApplicationService - deleteAlunoById");
+    }
+
+    @Override
+    public void patchAluno(UUID idAluno, AlunoPatchRequest alunoPatchRequest) {
+        log.info("[start] AlunoApplicationService - patchAluno");
+        Aluno aluno = alunoRepository.getAlunoById(idAluno);
+        aluno.atualizaAluno(alunoPatchRequest);
+        alunoRepository.postAluno(aluno);
+        log.info("[finish] AlunoApplicationService - patchAluno");
     }
 }

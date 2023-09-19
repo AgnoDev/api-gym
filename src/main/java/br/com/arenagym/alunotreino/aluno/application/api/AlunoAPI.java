@@ -26,5 +26,8 @@ public interface AlunoAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deleteAlunoById(@PathVariable UUID idAluno);
 
-
+    @PatchMapping(value = "/{idAluno}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAluno(@PathVariable UUID idAluno, @Valid
+    @RequestBody AlunoPatchRequest alunoPatchRequest);
 }

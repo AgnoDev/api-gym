@@ -48,4 +48,14 @@ public class AlunoController implements AlunoAPI {
         log.info("[finish] AlunoController - deleteAlunoById");
 
     }
+
+    @Override
+    public void patchAluno(UUID idAluno, AlunoPatchRequest alunoPatchRequest) {
+        log.info("[start] AlunoController - patchAluno");
+        log.info("[idAluno] {}", idAluno);
+        alunoService.patchAluno(idAluno, alunoPatchRequest);
+        log.info("[finish] AlunoController - patchAluno");
+
+    }
+
 }

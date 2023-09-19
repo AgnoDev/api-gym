@@ -1,5 +1,6 @@
 package br.com.arenagym.alunotreino.aluno.domain;
 
+import br.com.arenagym.alunotreino.aluno.application.api.AlunoPatchRequest;
 import br.com.arenagym.alunotreino.aluno.application.api.AlunoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -32,6 +33,7 @@ public class Aluno {
     @NotBlank
     private String celular;
     private String telefone;
+    @Enumerated(EnumType.STRING)
     private Sexo sexo;
     @NotNull
     private LocalDate dataNascimento;
@@ -54,5 +56,15 @@ public class Aluno {
         this.cpf = alunoRequest.getCpf();
         this.aceitaTermos = alunoRequest.getAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void atualizaAluno(AlunoPatchRequest alunoPatchRequest) {
+        this.nomeCompleto = alunoPatchRequest.getNomeCompleto();
+        this.celular = alunoPatchRequest.getCelular();
+        this.telefone = alunoPatchRequest.getTelefone();
+        this.sexo = alunoPatchRequest.getSexo();
+        this.dataNascimento = alunoPatchRequest.getDataNascimento();
+        this.aceitaTermos = alunoPatchRequest.getAceitaTermos();
+        this.dataHoraDaAtualizacao = LocalDateTime.now();
     }
 }
