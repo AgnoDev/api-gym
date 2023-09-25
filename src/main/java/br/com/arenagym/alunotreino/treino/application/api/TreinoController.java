@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -21,5 +22,14 @@ public class TreinoController implements TreinoAPI {
         TreinoResponse treino = treinoService.postTreino(idAluno, treinoRequest);
         log.info("[finish] -> TreinoController -> postTreino");
         return treino;
+    }
+
+    @Override
+    public List<TreinoListResponse> getTreinosDoAluno(UUID idAluno) {
+        log.info("[start] -> TreinoController -> getTreinosDoAluno");
+        log.info("[idAluno] {}", idAluno);
+       // TreinoResponse treino = treinoService.postTreino(idAluno, treinoRequest);
+        log.info("[finish] -> TreinoController -> getTreinosDoAluno");
+        return null;
     }
 }

@@ -1,6 +1,5 @@
 package br.com.arenagym.alunotreino.treino.application.api;
 
-import br.com.arenagym.alunotreino.aluno.application.api.*;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +14,10 @@ public interface TreinoAPI {
         @ResponseStatus(code = HttpStatus.CREATED)
         TreinoResponse postTreino(@PathVariable UUID idAluno,
                                   @Valid @RequestBody TreinoRequest treinoRequest);
-//
-//        @GetMapping
-//        @ResponseStatus(code = HttpStatus.OK)
-//        List<AlunoListResponse> getAllAluno();
+
+        @GetMapping
+        @ResponseStatus(code = HttpStatus.OK)
+        List<TreinoListResponse> getTreinosDoAluno(@PathVariable UUID idAluno);
 //
 //        @GetMapping(value = "/{idAluno}")
 //        @ResponseStatus(code = HttpStatus.OK)
