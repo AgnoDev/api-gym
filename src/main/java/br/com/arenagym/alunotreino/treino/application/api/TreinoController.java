@@ -28,8 +28,8 @@ public class TreinoController implements TreinoAPI {
     public List<TreinoListResponse> getTreinosDoAluno(UUID idAluno) {
         log.info("[start] -> TreinoController -> getTreinosDoAluno");
         log.info("[idAluno] {}", idAluno);
-       // TreinoResponse treino = treinoService.postTreino(idAluno, treinoRequest);
+        List<TreinoListResponse> treinosDoAluno = treinoService.getTreinosDoAluno(idAluno);
         log.info("[finish] -> TreinoController -> getTreinosDoAluno");
-        return null;
+        return treinosDoAluno;
     }
 }
