@@ -34,8 +34,8 @@ public class TreinoApplicationService implements TreinoService {
     public List<TreinoListResponse> getTreinosDoAluno(UUID idAluno) {
         log.info("[start] -> TreinoApplicationService -> getTreinosDoAluno");
         alunoService.getAlunoById(idAluno);
-       // Treino treino = treinoRepository.postTreino(new Treino(idAluno, treinoRequest));
+        List<Treino> treinosDoAluno = treinoRepository.getTreinosDoAluno(idAluno);
         log.info("[finish] -> TreinoApplicationService -> getTreinosDoAluno");
-        return null;
+        return TreinoListResponse.converte(treinosDoAluno);
     }
 }
