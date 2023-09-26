@@ -24,8 +24,9 @@ public class TreinoInfraRepository implements TreinoRepository {
     @Override
     public List<Treino> getTreinosDoAluno(UUID idAluno) {
         log.info("[start] -> TreinoInfraRepository -> getTreinosDoAluno");
+        //List<Treino> treinos = treinoJPARepository.findByIdAlunoRef(idAluno);
+        var treinos = treinoJPARepository.findByIdAlunoRef(idAluno);
         log.info("[finish] -> TreinoInfraRepository -> getTreinosDoAluno");
-
-        return null;
+        return treinos;
     }
 }
