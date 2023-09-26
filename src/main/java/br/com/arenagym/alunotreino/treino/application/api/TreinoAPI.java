@@ -23,10 +23,10 @@ public interface TreinoAPI {
         @ResponseStatus(code = HttpStatus.OK)
         TreinoResponseId getTreinoById(@PathVariable UUID idAluno, @PathVariable UUID idTreino);
 
-//        @DeleteMapping(value = "/{idAluno}")
-//        @ResponseStatus(code = HttpStatus.NO_CONTENT)
-//        void deleteAlunoById(@PathVariable UUID idAluno);
-//
+        @DeleteMapping(value = "/{idTreino}")
+        @ResponseStatus(code = HttpStatus.NO_CONTENT)
+        void deleteTreinoById(@PathVariable UUID idAluno, @PathVariable UUID idTreino);
+
 //        @PatchMapping(value = "/{idAluno}")
 //        @ResponseStatus(code = HttpStatus.NO_CONTENT)
 //        void patchAluno(@PathVariable UUID idAluno, @Valid

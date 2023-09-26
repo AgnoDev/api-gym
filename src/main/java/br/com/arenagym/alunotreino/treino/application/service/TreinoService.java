@@ -13,4 +13,5 @@ public interface TreinoService {
     TreinoResponse postTreino(UUID idAluno, TreinoRequest treinoRequest);
     List<TreinoListResponse> getTreinosDoAluno(UUID idAluno);
     TreinoResponseId getTreinoById(UUID idAluno, UUID idTreino);
+    TreinoResponseId deleteTreinoById(UUID idAluno, UUID idTreino);
 }

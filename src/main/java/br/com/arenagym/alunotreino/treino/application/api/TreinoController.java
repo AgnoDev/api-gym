@@ -41,4 +41,12 @@ public class TreinoController implements TreinoAPI {
         log.info("[finish] -> TreinoController -> getTreinoById");
         return treino;
     }
+
+    @Override
+    public void deleteTreinoById(UUID idAluno, UUID idTreino) {
+        log.info("[start] -> TreinoController -> deleteTreinoById");
+        log.info("[idAluno] {} - [idTreino] {}", idAluno, idTreino);
+        TreinoResponseId treino = treinoService.deleteTreinoById(idAluno, idTreino);
+        log.info("[finish] -> TreinoController -> deleteTreinoById");
+    }
 }

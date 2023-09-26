@@ -45,4 +45,15 @@ public class TreinoApplicationService implements TreinoService {
 
         return new TreinoResponseId(treino);
     }
+
+    @Override
+    public TreinoResponseId deleteTreinoById(UUID idAluno, UUID idTreino) {
+        log.info("[start] -> TreinoApplicationService -> deleteTreinoById");
+        alunoService.getAlunoById(idAluno);
+        Treino treino = treinoRepository.getTreinoById(idTreino);
+        treinoRepository.deleteTreino(treino);
+        log.info("[finish] -> TreinoApplicationService -> deleteTreinoById");
+
+        return null;
+    }
 }

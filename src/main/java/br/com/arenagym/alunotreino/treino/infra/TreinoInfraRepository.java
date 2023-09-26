@@ -38,4 +38,12 @@ public class TreinoInfraRepository implements TreinoRepository {
         log.info("[finish] -> TreinoInfraRepository -> getTreinoById");
         return treino;
     }
+
+    @Override
+    public void deleteTreino(Treino treino) {
+        log.info("[start] -> TreinoInfraRepository -> deleteTreino");
+        treinoJPARepository.delete(treino);
+        log.info("[finish] -> TreinoInfraRepository -> deleteTreino");
+
+    }
 }
