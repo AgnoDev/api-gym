@@ -1,10 +1,7 @@
 package br.com.arenagym.alunotreino.treino.application.service;
 
 import br.com.arenagym.alunotreino.aluno.application.service.AlunoService;
-import br.com.arenagym.alunotreino.treino.application.api.TreinoAPI;
-import br.com.arenagym.alunotreino.treino.application.api.TreinoListResponse;
-import br.com.arenagym.alunotreino.treino.application.api.TreinoRequest;
-import br.com.arenagym.alunotreino.treino.application.api.TreinoResponse;
+import br.com.arenagym.alunotreino.treino.application.api.*;
 import br.com.arenagym.alunotreino.treino.domain.Treino;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -37,5 +34,13 @@ public class TreinoApplicationService implements TreinoService {
         List<Treino> treinosDoAluno = treinoRepository.getTreinosDoAluno(idAluno);
         log.info("[finish] -> TreinoApplicationService -> getTreinosDoAluno");
         return TreinoListResponse.converte(treinosDoAluno);
+    }
+
+    @Override
+    public TreinoResponseId getTreinoById(UUID idAluno, UUID idTreino) {
+        log.info("[start] -> TreinoApplicationService -> getTreinoById");
+        log.info("[finish] -> TreinoApplicationService -> getTreinoById");
+
+        return null;
     }
 }

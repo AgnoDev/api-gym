@@ -37,7 +37,8 @@ public class TreinoController implements TreinoAPI {
     public TreinoResponseId getTreinoById(UUID idAluno, UUID idTreino) {
         log.info("[start] -> TreinoController -> getTreinoById");
         log.info("[idAluno] {} - [idTreino] {}", idAluno, idTreino);
+        TreinoResponseId treino = treinoService.getTreinoById(idAluno, idTreino);
         log.info("[finish] -> TreinoController -> getTreinoById");
-        return null;
+        return treino;
     }
 }
