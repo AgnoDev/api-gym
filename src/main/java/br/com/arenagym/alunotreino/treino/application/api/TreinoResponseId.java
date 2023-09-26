@@ -1,6 +1,7 @@
 package br.com.arenagym.alunotreino.treino.application.api;
 
 import br.com.arenagym.alunotreino.treino.domain.Exercicio;
+import br.com.arenagym.alunotreino.treino.domain.Treino;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
@@ -16,5 +17,13 @@ public class TreinoResponseId {
     private String nomeTreino;
     private Exercicio exercicio;
     private LocalDate dataInicio;
+
+    public TreinoResponseId(Treino treino) {
+        this.idTreino = treino.getIdTreino();
+        this.nomeTreino = treino.getNomeTreino();
+        this.exercicio = treino.getExercicio();
+        this.dataInicio = treino.getDataInicio();
+
+    }
 }
 
