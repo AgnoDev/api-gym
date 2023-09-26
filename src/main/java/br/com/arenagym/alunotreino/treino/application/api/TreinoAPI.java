@@ -18,11 +18,11 @@ public interface TreinoAPI {
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
         List<TreinoListResponse> getTreinosDoAluno(@PathVariable UUID idAluno);
-//
-//        @GetMapping(value = "/{idAluno}")
-//        @ResponseStatus(code = HttpStatus.OK)
-//        AlunoResponseId getAlunoById(@PathVariable UUID idAluno);
-//
+
+        @GetMapping(value = "/{idTreino}")
+        @ResponseStatus(code = HttpStatus.OK)
+        TreinoResponseId getTreinoById(@PathVariable UUID idAluno, @PathVariable UUID idTreino);
+
 //        @DeleteMapping(value = "/{idAluno}")
 //        @ResponseStatus(code = HttpStatus.NO_CONTENT)
 //        void deleteAlunoById(@PathVariable UUID idAluno);

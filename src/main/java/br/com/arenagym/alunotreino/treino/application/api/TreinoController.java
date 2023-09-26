@@ -32,4 +32,12 @@ public class TreinoController implements TreinoAPI {
         log.info("[finish] -> TreinoController -> getTreinosDoAluno");
         return treinosDoAluno;
     }
+
+    @Override
+    public TreinoResponseId getTreinoById(UUID idAluno, UUID idTreino) {
+        log.info("[start] -> TreinoController -> getTreinoById");
+        log.info("[idAluno] {} - [idTreino] {}", idAluno, idTreino);
+        log.info("[finish] -> TreinoController -> getTreinoById");
+        return null;
+    }
 }
