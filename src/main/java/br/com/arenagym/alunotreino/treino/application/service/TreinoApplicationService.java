@@ -39,8 +39,10 @@ public class TreinoApplicationService implements TreinoService {
     @Override
     public TreinoResponseId getTreinoById(UUID idAluno, UUID idTreino) {
         log.info("[start] -> TreinoApplicationService -> getTreinoById");
+        alunoService.getAlunoById(idAluno);
+        Treino treino = treinoRepository.getTreinoById(idTreino);
         log.info("[finish] -> TreinoApplicationService -> getTreinoById");
 
-        return null;
+        return new TreinoResponseId(treino);
     }
 }

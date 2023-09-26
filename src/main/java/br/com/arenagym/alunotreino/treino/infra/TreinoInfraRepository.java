@@ -29,4 +29,13 @@ public class TreinoInfraRepository implements TreinoRepository {
         log.info("[finish] -> TreinoInfraRepository -> getTreinosDoAluno");
         return treinos;
     }
+
+    @Override
+    public Treino getTreinoById(UUID idTreino) {
+        log.info("[start] -> TreinoInfraRepository -> getTreinoById");
+        var treino = treinoJPARepository.findById(idTreino)
+                .orElseThrow(() ->  new RuntimeException("### Treino Não Encontrado! ###"));
+        log.info("[finish] -> TreinoInfraRepository -> getTreinoById");
+        return treino;
+    }
 }

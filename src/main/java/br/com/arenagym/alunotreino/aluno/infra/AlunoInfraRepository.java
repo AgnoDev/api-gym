@@ -36,7 +36,7 @@ public class AlunoInfraRepository implements AlunoRepository {
         log.info("[start] - AlunoInfraRepository - getAlunoById");
         log.info("[finish] - AlunoInfraRepository - getAlunoById");
         Aluno aluno = alunoJPARepository.findById(idAluno)
-                .orElseThrow(()-> new RuntimeException("Cliente Não Encontrado"));
+                .orElseThrow(()-> new RuntimeException("&&& Aluno Não Encontrado! &&&"));
         return aluno;
     }
 

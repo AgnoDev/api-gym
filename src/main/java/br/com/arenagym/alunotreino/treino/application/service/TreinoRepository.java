@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface TreinoRepository {
     Treino postTreino(Treino treino);
     List<Treino> getTreinosDoAluno(UUID idAluno);
+    Treino getTreinoById(UUID idTreino);
 }
