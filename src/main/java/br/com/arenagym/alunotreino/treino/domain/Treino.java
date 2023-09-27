@@ -1,5 +1,6 @@
 package br.com.arenagym.alunotreino.treino.domain;
 
+import br.com.arenagym.alunotreino.treino.application.api.TreinoPatchRequest;
 import br.com.arenagym.alunotreino.treino.application.api.TreinoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -40,4 +41,10 @@ public class Treino {
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 
+    public void patchTreinoById(TreinoPatchRequest treinoRequest) {
+        this.nomeTreino = treinoRequest.getPeriodico();
+        this.exercicio = treinoRequest.getExercicio();
+        this.dataInicio = treinoRequest.getDataInicio();
+        this.dataHoraDaAtualizacao = LocalDateTime.now();
+    }
 }
