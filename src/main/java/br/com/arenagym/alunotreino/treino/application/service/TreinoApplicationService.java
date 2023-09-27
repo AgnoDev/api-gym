@@ -56,4 +56,15 @@ public class TreinoApplicationService implements TreinoService {
 
         return null;
     }
+
+    @Override
+    public void patchTreinoById(UUID idAluno, UUID idTreino, TreinoPatchRequest treinoPatchRequest) {
+        log.info("[start] -> TreinoApplicationService -> patchTreinoById");
+        alunoService.getAlunoById(idAluno);
+        Treino treino = treinoRepository.getTreinoById(idTreino);
+        treino.patchTreinoById(treinoPatchRequest);
+        treinoRepository.postTreino(treino);
+        log.info("[finish] -> TreinoApplicationService -> patchTreinoById");
+
+    }
 }
